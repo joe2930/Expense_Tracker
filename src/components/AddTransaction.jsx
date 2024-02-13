@@ -21,13 +21,15 @@ const AddTransaction = ({Amount, transactions,addTransaction }) => {
         (pre_acc=pre_acc+curr_item)
       
       ,0);
-    if(totalbal<Amount)
+    if((totalbal*-1)<Amount)
     {
-        setStatus(`You can save $${Amount - totalbal}`)
+        console.log(totalbal);
+        console.log(Amount);
+        setStatus(`You can save $${Number(totalbal) + Number(Amount)} in this month`)
     }
     else {
       setStatus(`
-    To maintain your balance, you require an additional  $${totalbal - Amount}`);
+    To maintain your balance, you require an additional  $${(Number(totalbal) + Number(Amount))*-1}`);
     }
     setShowStatus(true);
   }
@@ -37,7 +39,7 @@ const AddTransaction = ({Amount, transactions,addTransaction }) => {
       <h3>Add New Transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Text</label>
+          <label htmlFor="text">Objective</label>
           <input 
             type="text"
             value={text} 
