@@ -71,10 +71,17 @@ const AddTransaction = ({Amount, transactions,addTransaction }) => {
 
 export default AddTransaction;
 
+
+
 // when we access e.target.value, we are accessing the value property of the <input> element, which contains the current value entered by the user
 
+
+
 //onchange mns any change happened 
+
+
 
 // the onChange event is triggered on the <input> element, 
 //e.target means event object ....refers tp the input element 
 //e.target.value means input element oda value
+
